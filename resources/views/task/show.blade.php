@@ -20,6 +20,12 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam error, eveniet optio adipisci ducimus itaque at nam nisi sapiente praesentium nemo, quia incidunt totam excepturi provident animi corporis, tenetur reprehenderit?</p>
                     <h5>Long Description :</h5>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam error, eveniet optio adipisci ducimus itaque at nam nisi sapiente praesentium nemo, quia incidunt totam excepturi provident animi corporis, tenetur reprehenderit?</p>
+                    <div class="">
+                        <a href="{{route('editTask')}}" type="button" class="btn btn-sm btn-warning">Edit</a>
+                        <a href="#" type="button" class="btn btn-sm btn-danger">Delete</a>
+                        <a href="#" type="button" class="btn btn-sm btn-success">Complete</a>
+                        <span class="text-green">Uncomplete Task</span>
+                    </div>
                 </div>
               </div>
         </div>
