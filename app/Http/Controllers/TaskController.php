@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 class TaskController extends Controller
 {
  public function taskList() {
-    return view('task.index');
+    $taskLists =  Task::all();
+    return view('task.index', compact('taskLists'));
  }
 
  public function showTask() {

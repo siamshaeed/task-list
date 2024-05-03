@@ -20,10 +20,11 @@
                 </div>
                 <div class="card-body">
                     <ul>
-                        <a href="{{route('showTask')}}" class="text-decoration-none text-dark"><li>Task 1</li></a>
-                        <a href="{{route('showTask')}}" class="text-decoration-none text-dark"><li>Task 2</li></a>
-                        <a href="{{route('showTask')}}" class="text-decoration-none text-dark"><li>Task 3</li></a>
-                        <a href="{{route('showTask')}}" class="text-decoration-none text-dark"><li>Task 4</li></a>
+                      @foreach ($taskLists as $taskList)
+                        @if ($taskList)
+                          <a href="{{route('showTask')}}" class="text-decoration-none text-dark"><li>{{$taskList->title}}</li></a>
+                        @endif
+                      @endforeach
                     </ul>
                 </div>
               </div>
