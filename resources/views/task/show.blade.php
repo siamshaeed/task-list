@@ -13,7 +13,10 @@
         <div class="col-md-8">
             <div class="card mt-3">
                 <div class="card-header">
-                  <h2>Task Details</h2>
+                    <div class="row">
+                        <div class="col-md-10"><h2>Add Task</h2></div>
+                        <div class="col-md-2"><a href="{{ route('taskList')}}" type="button" class="btn btn-sm btn-secondary">Task List</a></div>
+                    </div>
                 </div>
                 <div class="card-body">
                     <h5>Description :</h5>

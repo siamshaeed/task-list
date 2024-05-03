@@ -15,12 +15,23 @@ class TaskController extends Controller
     return view('task.show');
  }
 
+ public function editTask() {
+    return view('task.edit_task');
+ }
+
  public function addTask() {
     return view('task.add_task');
  }
 
- public function editTask() {
-    return view('task.edit_task');
+ public function taskStore(Request $request) {
+    $task = new Task();
+    $task->title            =      $request->title;
+    $task->description      =      $request->description;
+    $task->long_description =      $request->long_description;
+    $task->save();
+
+    return redirect('/');
+
  }
 
 }
