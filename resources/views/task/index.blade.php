@@ -13,7 +13,10 @@
         <div class="col-md-8">
             <div class="card mt-3">
                 <div class="card-header">
-                  <h2>Task List</h2>
+                    <div class="row">
+                        <div class="col-md-10"><h2>Task List</h2></div>
+                        <div class="col-md-2"><a href="#" type="button" class="btn btn-secondary">Add Task</a></div>
+                    </div>
                 </div>
                 <div class="card-body">
                     <ul>
