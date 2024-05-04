@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreTaskRequest;
 use App\Models\Task;
 use Illuminate\Http\Request;
 
@@ -24,7 +25,7 @@ class TaskController extends Controller
     return view('task.add_task');
  }
 
- public function taskStore(Request $request) {
+ public function taskStore(Request $request, StoreTaskRequest $StoreTaskRequest) {
     $task = new Task();
     $task->title            =      $request->title;
     $task->description      =      $request->description;
