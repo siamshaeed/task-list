@@ -14,7 +14,7 @@
                     <ol>
                       @foreach ($taskLists as $taskList)
                         @if ($taskList)
-                          <a href="{{route('showTask')}}" class="text-decoration-none text-dark"><li>{{$taskList->title}}</li></a>
+                          <a href="{{ route('showTask', ['id' => $taskList->id]) }}" class="text-decoration-none text-dark"><li>{{$taskList->title}}</li></a>
                         @endif
                       @endforeach
                     </ol>

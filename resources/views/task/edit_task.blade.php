@@ -15,17 +15,17 @@
                         @csrf
                         <div class="form-group">
                           <label for="title">Title</label>
-                          <input type="text" class="form-control" name="title" placeholder="Enter Task Title">
+                          <input type="text" class="form-control" name="title" value="{{ $task->title }}">
                         </div>
 
                         <div class="form-group">
                             <label for="title">Description</label>
-                            <input type="text" class="form-control" name="description" placeholder="Enter Task Description">
+                            <input type="text" class="form-control" name="description" value="{{ $task->description }}">
                         </div>
 
                         <div class="form-group">
                           <label for="title">Long Description</label>
-                          <textarea name="long_description" class="form-control" cols="30" rows="4" placeholder="Enter Task Long Description"></textarea>
+                          <textarea name="long_description" class="form-control" cols="30" rows="4">{{ $task->long_description }}</textarea>
                         </div>
 
                         <button type="submit" class="btn btn-sm btn-secondary mt-3">Save</button>

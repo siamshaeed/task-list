@@ -13,12 +13,16 @@ class TaskController extends Controller
     return view('task.index', compact('taskLists'));
  }
 
- public function showTask() {
-    return view('task.show');
- }
+ public function showTask($id) {
+    $task = Task::find($id);
+    // dd($task);
+    return view('task.show', compact('task'));
+}
 
- public function editTask() {
-    return view('task.edit_task');
+ public function editTask($id) {
+    $task = Task::find($id);
+    // dd($task);
+    return view('task.edit_task', compact('task'));
  }
 
  public function addTask() {
