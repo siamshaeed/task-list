@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreTaskRequest;
+use App\Http\Requests\UpdateTaskRequest;
 use App\Models\Task;
 use Illuminate\Http\Request;
 
@@ -31,6 +32,17 @@ class TaskController extends Controller
 
  public function taskStore(Request $request, StoreTaskRequest $StoreTaskRequest) {
     $task = new Task();
+    $task->title            =      $request->title;
+    $task->description      =      $request->description;
+    $task->long_description =      $request->long_description;
+    $task->save();
+
+    return redirect('/');
+
+ }
+
+ public function updateTask(Request $request, UpdateTaskRequest $updateTaskRequest) {
+    $task = Task::find($request->id);
     $task->title            =      $request->title;
     $task->description      =      $request->description;
     $task->long_description =      $request->long_description;

@@ -11,9 +11,10 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <form action="{{ route('taskStore')}}" method="POST">
+                    <form action="{{ route('updateTask')}}" method="POST">
                         @csrf
                         <div class="form-group">
+                          <input type="hidden" name="id" value="{{$task->id}}">
                           <label for="title">Title</label>
                           <input type="text" class="form-control" name="title" value="{{ $task->title }}">
                         </div>
