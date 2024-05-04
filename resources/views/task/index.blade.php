@@ -11,13 +11,13 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <ul>
+                    <ol>
                       @foreach ($taskLists as $taskList)
                         @if ($taskList)
                           <a href="{{route('showTask')}}" class="text-decoration-none text-dark"><li>{{$taskList->title}}</li></a>
                         @endif
                       @endforeach
-                    </ul>
+                    </ol>
                 </div>
               </div>
         </div>

@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class TaskController extends Controller
 {
  public function taskList() {
-    $taskLists =  Task::all();
+    $taskLists =  Task::orderBy('created_at', 'desc')->get();
     return view('task.index', compact('taskLists'));
  }
 
