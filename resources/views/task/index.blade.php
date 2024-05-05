@@ -11,13 +11,26 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <ol>
-                      @foreach ($taskLists as $taskList)
-                        @if ($taskList)
-                          <a href="{{ route('showTask', ['id' => $taskList->id]) }}" class="text-decoration-none text-dark"><li>{{$taskList->title}}</li></a>
-                        @endif
-                      @endforeach
-                    </ol>
+                    <table class="table table-striped">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Task</th>
+                            <th scope="col">Status</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        @foreach ($taskLists as $taskList)
+                          <tr>
+                            <th scope="row">{{$loop->iteration}}</th>
+                            <td><a href="{{ route('showTask', ['id' => $taskList->id]) }}" class="text-decoration-none text-dark">{{$taskList->title}}</a></td>
+                            <td>{{$taskList->completed ? 'Complete' : 'Incomplete'}}</td>
+                          </tr>
+                          @endforeach
+                        </tbody>
+                      </table>
+                      {{$taskLists->links('pagination::bootstrap-5')}}
+
                 </div>
               </div>
         </div>

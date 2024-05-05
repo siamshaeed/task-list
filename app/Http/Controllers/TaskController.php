@@ -7,11 +7,12 @@ use App\Http\Requests\UpdateTaskRequest;
 use App\Models\Task;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Pagination\Paginator;
 
 class TaskController extends Controller
 {
  public function taskList() {
-    $taskLists =  Task::orderBy('created_at', 'desc')->get();
+    $taskLists =  Task::orderBy('created_at', 'desc')->paginate(4);
     return view('task.index', compact('taskLists'));
  }
 
