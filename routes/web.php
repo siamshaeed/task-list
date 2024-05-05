@@ -21,5 +21,6 @@ Route::get('/show-task/{id}', [TaskController::class, 'showTask'])->name('showTa
 Route::get('/edit-task/{id}', [TaskController::class, 'editTask'])->name('editTask');
 Route::post('/update', [TaskController::class, 'updateTask'])->name('updateTask');
 Route::get('/delete/{id}', [TaskController::class, 'deleteTask'])->name('deleteTask');
+Route::get('complete-task/{id}', [TaskController::class, 'completeTask'])->name('completeTask');
 
 

@@ -6,6 +6,7 @@ use App\Http\Requests\StoreTaskRequest;
 use App\Http\Requests\UpdateTaskRequest;
 use App\Models\Task;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class TaskController extends Controller
 {
@@ -55,6 +56,14 @@ public function deleteTask($id) {
  $task = Task::find($id);
  $task->delete();
  return redirect('/');
+}
+
+public function completeTask($id) {
+    $task = Task::findOrFail($id); // Find the task by id
+
+    $task->forceFill(['completed' => !$task->completed])->save(); // Toggle the value of 'completed' field
+
+    return back(); // Redirect back to the previous page
 }
 
 }

@@ -19,8 +19,12 @@
                     <div class="">
                         <a href="{{ route('editTask', ['id' => $task->id]) }}" type="button" class="btn btn-sm btn-warning">Edit</a>
                         <a href="{{route('deleteTask', ['id' => $task->id]) }}" type="button" class="btn btn-sm btn-danger">Delete</a>
-                        <a href="#" type="button" class="btn btn-sm btn-success">Complete</a>
-                        <span class="text-green">Uncomplete Task</span>
+
+                        @if ($task->completed === 0)
+                            <a href="{{route('completeTask', ['id' => $task->id]) }}" type="button" class="btn btn-sm btn-success">Uncomplete</a>
+                        @elseif ($task->completed === 1)
+                            <a href="{{route('completeTask', ['id' => $task->id]) }}" type="button" class="btn btn-sm btn-success">Complete</a>
+                        @endif
                     </div>
                 </div>
               </div>
